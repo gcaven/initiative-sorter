@@ -17,7 +17,6 @@ class MealTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationItem.leftBarButtonItem = editButtonItem
-		loadSampleEntries()
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -108,29 +107,4 @@ class MealTableViewController: UITableViewController {
         tableView.reloadData();
 		}
 	}
-  
-  private func loadSampleEntries() {
-    guard let entry2 = InitiativeEntry(name: "Djanko Funyuns", initiative: 6)
-      else {
-        fatalError("Failed creating sample 2")
-    }
-    guard let entry5 = InitiativeEntry(name: "Branta", initiative: 9)
-      else {
-        fatalError("Failed creating sample 5")
-    }
-    guard let entry1 = InitiativeEntry(name: "Wilfred", initiative: 2)
-      else {
-        fatalError("Failed creating sample 1")
-    }
-    guard let entry4 = InitiativeEntry(name: "Goblin 2", initiative: 16)
-      else {
-        fatalError("Failed creating sample 4")
-    }
-    guard let entry3 = InitiativeEntry(name: "Goblin 1", initiative: 9)
-      else {
-        fatalError("Failed creating sample 3")
-    }
-    entries += [entry1, entry2, entry3, entry4, entry5]
-    entries.sort() { $0.initiative > $1.initiative }
-  }
 }
